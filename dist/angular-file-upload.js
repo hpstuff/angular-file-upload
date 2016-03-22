@@ -197,6 +197,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    var count = this.queue.length;
 	                    var addedFileItems = [];
 	
+	                    if (this.queueLimit === 1) {
+	                        this.clearQueue();
+	                    }
+	
 	                    forEach(list, function (some /*{File|HTMLInputElement|Object}*/) {
 	                        var temp = new FileLikeObject(some);
 	
@@ -1996,4 +2000,3 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
-//# sourceMappingURL=angular-file-upload.js.map
