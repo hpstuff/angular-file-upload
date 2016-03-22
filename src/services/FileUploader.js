@@ -59,6 +59,10 @@ export default (fileUploaderOptions, $rootScope, $http, $window, FileLikeObject,
             var arrayOfFilters = this._getFilters(filters);
             var count = this.queue.length;
             var addedFileItems = [];
+            
+            if (this.queueLimit === 1) {
+                this.clearQueue();
+            }
 
             forEach(list, (some /*{File|HTMLInputElement|Object}*/) => {
                 var temp = new FileLikeObject(some);
